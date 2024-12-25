@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Your Persona">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <ScrollView>
+        <StackLayout>
+            <!-- Quote of the day -->
+            <StackLayout class="main-card">
+                <Label text="Thought for the day" class="h3" />
+                <Label text="Don't enjoy life, explore it." class="quote-text" textWrap="true" />
+            </StackLayout>
+
+            <!-- Persona Cards -->
+            <GridLayout rows="auto" columns="*,*" class="persona-cards">
+                <Repeater items="{{ personaCards }}" colSpan="2">
+                    <Repeater.itemTemplate>
+                        <StackLayout class="persona-card">
+                            <Image src="{{ image }}" stretch="aspectFit" />
+                            <Label text="{{ title }}" class="h2" />
+                            <Label text="{{ description }}" textWrap="true" />
+                        </StackLayout>
+                    </Repeater.itemTemplate>
+                </Repeater>
+            </GridLayout>
+
+            <!-- Instructions -->
+            <StackLayout class="main-card">
+                <Label text="Choose 1 card from the deck above" class="h3" />
+                <Label text="Read the card" class="instruction-text" />
+                <Label text="Tell me what you think about me" class="instruction-text" />
+                <Label text="Send your perspectives" class="instruction-text" />
+            </StackLayout>
+
+            <!-- Timer -->
+            <Label text="{{ remainingTime }}" class="timer" />
+        </StackLayout>
+    </ScrollView>
+</Page>

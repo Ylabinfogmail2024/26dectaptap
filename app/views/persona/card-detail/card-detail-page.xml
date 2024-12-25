@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Card Details">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <ScrollView>
+        <StackLayout>
+            <!-- Card Display -->
+            <StackLayout class="persona-card-detail">
+                <Label text="{{ selectedCard.title }}" class="card-title" />
+                <Label text="{{ selectedCard.description }}" class="card-subtitle" />
+                
+                <GridLayout rows="auto" columns="*" class="skills-container">
+                    <Repeater items="{{ selectedCard.skills }}">
+                        <Repeater.itemTemplate>
+                            <StackLayout class="skill-item">
+                                <Label text="{{ name }}" class="skill-name" />
+                                <StackLayout orientation="horizontal" class="rating-stars">
+                                    <Repeater items="{{ $parents['Repeater'].getStars(rating) }}">
+                                        <Repeater.itemTemplate>
+                                            <Label text="★" class="{{ $value ? 'star-filled' : 'star-empty' }}" />
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                </StackLayout>
+                            </StackLayout>
+                        </Repeater.itemTemplate>
+                    </Repeater>
+                </GridLayout>
+            </StackLayout>
+
+            <!-- Quote Section -->
+            <StackLayout class="quote-section">
+                <Label text="{{ quote }}" textWrap="true" class="quote-text" />
+            </StackLayout>
+
+            <!-- Questions -->
+            <StackLayout class="questions-section">
+                <GridLayout columns="auto, *" class="question-header">
+                    <Label text="Question" col="0" class="question-label" />
+                    <Label text="{{ currentQuestionNumber }}/{{ totalQuestions }}" col="1" class="question-number" />
+                </GridLayout>
+                
+                <TextView hint="Enter your answer here..." text="{{ currentAnswer }}" class="answer-input" />
+                
+                <GridLayout columns="*, *" class="action-buttons">
+                    <Button text="Save as draft" tap="onSaveDraft" col="0" class="btn-secondary" />
+                    <Button text="{{ isLastQuestion ? 'Send' : 'Next' }}" tap="onNextQuestion" col="1" class="btn-primary" />
+                </GridLayout>
+            </StackLayout>
+
+            <!-- Timer -->
+            <Label text="{{ remainingTime }}" class="timer" />
+        </StackLayout>
+    </ScrollView>
+</Page>

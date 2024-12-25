@@ -1,0 +1,32 @@
+[
+  {
+    "interaction_code": "CH20241223001",
+    "challenger_name": "User123",
+    "challengee_profile": "LIN91",
+    "challenge_id": "morning-routine",
+    "challenge_title": "Morning Routine Challenge",
+    "submission_data": {
+      "what_did_i_do": "Woke up at 6 AM, did a 15-minute meditation, followed by a 30-minute workout, and created a to-do list for the day.",
+      "my_work": "https://example.com/morning-routine-photo.jpg",
+      "how_do_i_feel": "Energized and motivated to tackle the day with clarity.",
+      "what_did_i_learn": "Consistency in the morning routine can significantly improve productivity and mental focus."
+    },
+    "submission_timestamp": "2024-12-23T09:00:00Z",
+    "challenge_status": "Submitted"
+  },
+  {
+    "interaction_code": "CH20241223002",
+    "challenger_name": "User456",
+    "challengee_profile": "LIN91",
+    "challenge_id": "learning-sprint",
+    "challenge_title": "Learning Sprint Challenge",
+    "submission_data": {
+      "what_did_i_do": "Learned the basics of piano and play Happy Birthday song for my dog.",
+      "my_work": "https://example.com/python-script.mp4",
+      "how_do_i_feel": "My fingers didnt follow the brain's direction haha. Patience and Precision is the key.",
+      "what_did_i_learn": "Breaking tasks into smaller chunks and maintaining persistence leads to steady progress."
+    },
+    "submission_timestamp": "2024-12-23T10:30:00Z",
+    "challenge_status": "Submitted"
+  }
+]

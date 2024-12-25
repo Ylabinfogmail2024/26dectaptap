@@ -1,0 +1,36 @@
+import { useParams, useNavigate } from 'react-router-dom';
+import { cards } from '../data/cards';
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import CardLayout from '../components/CardLayout';
+
+export default function CardDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const card = cards.find(c => c.id === id);
+  
+  if (!card) {
+    return <div>Card not found</div>;
+  }
+
+  return (
+    <CardLayout title="Read my card">
+      <div className="relative h-full flex flex-col">
+        <div className="flex-1 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-sm max-h-[60vh]">
+            <img
+              src={card.frontImage}
+              alt={card.title}
+              className="w-full h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+        <button
+          onClick={() => navigate(`/card/${id}/back`)}
+          className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+        >
+          <ArrowRightIcon className="w-6 h-6 text-[#6B4E71]" />
+        </button>
+      </div>
+    </CardLayout>
+  );
+}

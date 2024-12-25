@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Tap tap" />
+    
+    <StackLayout>
+        <!-- Header -->
+        <FlexboxLayout justifyContent="space-between" padding="10">
+            <Label text="Hello, Mysterious Owl!" class="h2" />
+            <Button text="Sign Up/Log In" tap="onLoginTap" />
+        </FlexboxLayout>
+
+        <!-- Character Ring -->
+        <ScrollView orientation="horizontal" class="character-ring">
+            <StackLayout orientation="horizontal">
+                <Image src="~/images/sneaky-panther.png" class="character-item" tap="onCharacterTap" />
+                <Image src="~/images/mysterious-owl.png" class="character-item" tap="onCharacterTap" />
+                <Image src="~/images/excited-raccoon.png" class="character-item" tap="onCharacterTap" />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Main Card -->
+        <StackLayout class="main-card">
+            <Label text="Tap, tap..." class="h1" horizontalAlignment="center" />
+            <Label text="Choose a character from the Character Ring above" textWrap="true" 
+                   horizontalAlignment="center" />
+        </StackLayout>
+
+        <!-- Join Button -->
+        <Button text="Join as Mysterious Owl" tap="onJoinTap" 
+                class="btn btn-primary" margin="10" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="thank-you-container">
+            <Label text="Thank you" class="thank-you-title" />
+            
+            <Label text="Your perspective mean a lot to me in the journey of" class="thank-you-subtitle" />
+            <Label text="Discovering Myself" class="discovering-text" />
+            
+            <Label text="The system has been analyzing your responses and preparing a Persona Card for you," 
+                   class="analysis-text" textWrap="true" />
+            
+            <StackLayout class="action-buttons">
+                <Button text="Sign up" tap="onSignUpTap" class="btn-primary" />
+                <Button text="Already had an account at TeamFD? Log in now" 
+                        tap="onLoginTap" class="btn-secondary" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
